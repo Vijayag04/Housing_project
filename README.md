@@ -51,7 +51,7 @@ During this stage, we'll focus on preprocessing our data. Important steps such a
 
 **Checking correlation between the features of dataframe.**
 
-![image1.png](attachment:image.png)
+![Housing_project/image1.png](attachment:image.png)
 
 - The darkest red outputs illustrate the strongest positive linear relationships as far as we can strictly from
 correlation<br> coefficients and the blue values are the negative linear relationships.
