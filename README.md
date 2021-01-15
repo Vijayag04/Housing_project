@@ -79,7 +79,7 @@ Data was scrubbed to get better r^2 value in following ways
 
 - Eliminated the outliers on columns 
  - price < 4000000
- - sqft_living < 8000
+ - sqft_living < 6000
  - sqft_lot < 500000
  - bedrooms < 5
  - bathrooms < 4 
