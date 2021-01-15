@@ -51,7 +51,7 @@ During this stage, we'll focus on preprocessing our data. Important steps such a
 
 **Checking correlation between the features of dataframe.**
 
-![Housing_project/image1.png](attachment:image.png)
+![image1.png](attachment:image1.png)
 
 - The darkest red outputs illustrate the strongest positive linear relationships as far as we can strictly from
 correlation<br> coefficients and the blue values are the negative linear relationships.
@@ -61,13 +61,13 @@ correlated<br> with each other
 
 **Most House Sales in a Month**
 
-![image2.png](attachment:image.png)
+![image2.png](attachment:image2.png)
 
 The most house were sold in the months of May, April and July.
 
 Usually location plays considerable role in forming house price. Below you can find locations of houses that has been sold and their price ranges. <br>A Scatterplot of king county, longitude with latitude on the price range.
 
-![image3.png](attachment:image.png)
+![image3.png](attachment:image3.png)
 
 # Linear Regression Model
 
@@ -96,7 +96,7 @@ RMSE Train: 0.24753819494675303<br>
 RMSE Test: 0.24917202285453546<br>
 R2 Score: 0.752
 
-![image4.png](attachment:image.png)
+![image4.png](attachment:image4.png)
 
  Overall, looks fairly robust, although there are some violations near the tails.
 
@@ -104,7 +104,7 @@ R2 Score: 0.752
 
 Checking whether the model's errors are indeed homoscedastic or if they violate this principle and display heteroscedasticity.
 
-![image6.png](attachment:image.png)
+![image6.png](attachment:image6.png)
 
 Scatter plot shows the data are homoscedastic (means the residuals are equal across the regression line).
 
