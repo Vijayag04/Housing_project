@@ -1,66 +1,118 @@
-# Phase 2 Project
 
-Another module down--you're almost half way there!
+# Project Title : Housing Project
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
 
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
+**Objective**
+- The goal of this project is to develop a model that will predict house prices in King County as accurate as possible.
 
-## Project Overview
+# Loading Data 
 
-For this project, you will use regression modeling to analyze house sales in a northwestern county.
+We've given a dataset with housing prices and other features, such as size of the house, 
+how many bedrooms, overall condition and<br> others. Let's take a look at features we have and their meaning:
 
-### The Data
 
-This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
 
-It is up to you to decide what data from this dataset to use and how to use it. If you are feeling overwhelmed or behind, we recommend you ignore some or all of the following features:
 
-* date
-* view
-* sqft_above
-* sqft_basement
-* yr_renovated
-* zipcode
-* lat
-* long
-* sqft_living15
-* sqft_lot15
+- **id** - A notation for a house
+- **date** - Date house was sold
+- **price** - Price is prediction target
+- **bedrooms** - Number of Bedrooms/House
+- **bathrooms** - Number of bathrooms/bedrooms
+- **sqft_living** - Square footage of the home
+- **sqft_lot**- Square footage of the lot
+- **floors** - Total floors (levels) in house
+- **waterfront** - House which has a view to a waterfront
+- **view** - Has been viewed
+- **condition** - How good the condition is ( Overall )
+- **grade**- Overall grade given to the housing unit, based on King County grading system
+- **sqft_above** - square footage of house apart from basement
+- **sqft_basement** - square footage of the basement
+- **yr_built** - Built Year
+- **yr_renovated** - Year when house was renovated
+- **zipcode** - Zipcode
+- **lat**- Latitude coordinate
+- **long** - Longitude coordinate
+- **sqft_living15** - Living room area in 2015 (implies-- some renovations) This might or might not have affected the lotsize area
+- **sqft_lot15** - Lot size area in 2015 (implies-- some renovations)
 
-### Business Problem
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
+**Setting Up Our Data**:  The modules I imported were:
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+- pandas for data analysis
+- numpy for scientific computation
+- matplotlib for basic plotting
+- seaborn for advanced plotting
+- statsmodel for  modeling & evaluations
+- sci-kit learn for modeling & evaluations
 
-## Deliverables
+# Cleaning the Data
 
-There are three deliverables for this project:
+During this stage, we'll focus on preprocessing our data. Important steps such as identifying and removing null values, dealing <br>with outliers and normalizing data,
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+**Checking correlation between the features of dataframe.**
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+![image1.png](attachment:image.png)
 
-### Key Points
+- The darkest red outputs illustrate the strongest positive linear relationships as far as we can strictly from
+correlation<br> coefficients and the blue values are the negative linear relationships.
+- The values that describe each house's sqft_living and grade,sqft_living and price are often strongly
+correlated<br> with each other
+- There is strong correlation between sqft_living and sqft_above, it would be reasonable to remove one of them.
 
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
+**Most House Sales in a Month**
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
+![image2.png](attachment:image.png)
 
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
+The most house were sold in the months of May, April and July.
 
-## Getting Started
+Usually location plays considerable role in forming house price. Below you can find locations of houses that has been sold and their price ranges. <br>A Scatterplot of king county, longitude with latitude on the price range.
 
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
+![image3.png](attachment:image.png)
 
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
+# Linear Regression Model
 
-## Project Submission and Review
+We could explore Linear regression for all variables vs. price to see how they affect saleprice individually (R squared) and<br>also verify if the independent variables selected are statistically significant (p-value....the lower they are for the corresponding <br>variables the more statistically significant they are). After trying few models  finally used this 
+model since it has R^2 value as 75%.
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+Data was scrubbed to get better r^2 value in following ways
+- Handled the null values and dropped few columns.
 
-## Summary
+- Eliminated the outliers on columns 
+ - price < 4000000
+ - sqft_living < 8000
+ - sqft_lot < 500000
+ - bedrooms < 5
+ - bathrooms < 4 
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+- Transformed the categorical variables like waterfront, view, grade, condition, zipcode and yr_renovated<br>
+- Performed Logarithmic Transformation on price, sqft_living, sqft_lot, bathrooms
+
+**Checking for Normality<br>**
+We should check to ensure that our residuals are normally distributed. As we've seen before, a Q-Q plot is a helpful visual for analyzing this.
+
+Train MSE: 0.061275157957496704<br>
+Test MSE: 0.062086696973421146<br>
+RMSE Train: 0.24753819494675303<br>
+RMSE Test: 0.24917202285453546<br>
+R2 Score: 0.752
+
+![image4.png](attachment:image.png)
+
+ Overall, looks fairly robust, although there are some violations near the tails.
+
+# **Checking for Homoscedasticity**<br>
+
+Checking whether the model's errors are indeed homoscedastic or if they violate this principle and display heteroscedasticity.
+
+![image6.png](attachment:image.png)
+
+Scatter plot shows the data are homoscedastic (means the residuals are equal across the regression line).
+
+# Conclusion
+
+
+- After making necessary cleaning and modification of our data, model-4 performs with 75% accuracy across all of the data.
+
+- Selected important features and rejected the ones that can negatively impact result of the prediction.
+
+- Location and size of the house have biggest impact on house price.
