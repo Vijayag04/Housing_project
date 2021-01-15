@@ -61,13 +61,13 @@ correlated<br> with each other
 
 **Most House Sales in a Month**
 
-![image2.png](attachment:image2.png)
+![image2](image2.png)
 
 The most house were sold in the months of May, April and July.
 
 Usually location plays considerable role in forming house price. Below you can find locations of houses that has been sold and their price ranges. <br>A Scatterplot of king county, longitude with latitude on the price range.
 
-![image3.png](attachment:image3.png)
+![image3](image3.png)
 
 # Linear Regression Model
 
@@ -96,7 +96,7 @@ RMSE Train: 0.24753819494675303<br>
 RMSE Test: 0.24917202285453546<br>
 R2 Score: 0.752
 
-![image4.png](attachment:image4.png)
+![image4](image4.png)
 
  Overall, looks fairly robust, although there are some violations near the tails.
 
@@ -104,7 +104,7 @@ R2 Score: 0.752
 
 Checking whether the model's errors are indeed homoscedastic or if they violate this principle and display heteroscedasticity.
 
-![image6.png](attachment:image6.png)
+![image6](image6.png)
 
 Scatter plot shows the data are homoscedastic (means the residuals are equal across the regression line).
 
