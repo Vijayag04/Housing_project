@@ -116,6 +116,6 @@ Scatter plot shows the data are homoscedastic (means the residuals are equal acr
 - Selected important features and rejected the ones that can negatively impact result of the prediction.
 
 - Location and size of the house have biggest impact on house price.
-Blog link:
+- Blog link:
 
 https://gvijayared.medium.com/linear-regression-in-machine-learning-1db6b780b9b6
