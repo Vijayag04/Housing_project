@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Project Title : Housing Project
 
 
@@ -87,7 +87,6 @@ Data was scrubbed to get better r^2 value in following ways
 - Transformed the categorical variables like waterfront, view, grade, condition, zipcode and yr_renovated<br>
 - Performed Logarithmic Transformation on price, sqft_living, sqft_lot, bathrooms
 
-=======
 
 # Project Title : Housing Project
 
@@ -177,7 +176,7 @@ Data was scrubbed to get better r^2 value in following ways
 - Transformed the categorical variables like waterfront, view, grade, condition, zipcode and yr_renovated<br>
 - Performed Logarithmic Transformation on price, sqft_living, sqft_lot, bathrooms
 
->>>>>>> 9dddb6392b1a4d1cf73f264e58a866ded9a92c11
+
 **Checking for Normality<br>**
 We should check to ensure that our residuals are normally distributed. As we've seen before, a Q-Q plot is a helpful visual for analyzing this.
 
@@ -187,11 +186,10 @@ RMSE Train: 0.24753819494675303<br>
 RMSE Test: 0.24917202285453546<br>
 R2 Score: 0.752
 
-<<<<<<< HEAD
+
 ![image4.png](attachment:image.png)
-=======
 ![image4](image4.png)
->>>>>>> 9dddb6392b1a4d1cf73f264e58a866ded9a92c11
+
 
  Overall, looks fairly robust, although there are some violations near the tails.
 
@@ -199,11 +197,11 @@ R2 Score: 0.752
 
 Checking whether the model's errors are indeed homoscedastic or if they violate this principle and display heteroscedasticity.
 
-<<<<<<< HEAD
-![image6.png](attachment:image.png)
-=======
+
+
+
 ![image6](image6.png)
->>>>>>> 9dddb6392b1a4d1cf73f264e58a866ded9a92c11
+
 
 Scatter plot shows the data are homoscedastic (means the residuals are equal across the regression line).
 
@@ -215,9 +213,9 @@ Scatter plot shows the data are homoscedastic (means the residuals are equal acr
 - Selected important features and rejected the ones that can negatively impact result of the prediction.
 
 - Location and size of the house have biggest impact on house price.
-<<<<<<< HEAD
-=======
+
+
 - Blog link:
 
 https://gvijayared.medium.com/linear-regression-in-machine-learning-1db6b780b9b6
->>>>>>> 9dddb6392b1a4d1cf73f264e58a866ded9a92c11
+
